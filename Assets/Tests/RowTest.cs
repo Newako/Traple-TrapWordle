@@ -10,11 +10,11 @@ public class RowTests
     [Test]
     public void RowWord_ReturnsCorrectString()
     {
-        // Arrange
+
         GameObject rowObj = new GameObject();
         Row row = rowObj.AddComponent<Row>();
 
-        // Create tiles and assign letters
+
         var letters = new[] { 'C', 'A', 'T' };
         rowObj.transform.DetachChildren();
         for (int i = 0; i < letters.Length; i++)
@@ -30,13 +30,13 @@ public class RowTests
             tile.SetLetter(letters[i]);
         }
 
-        // Force Awake() to run and populate tiles array
+
         rowObj.SetActive(false); rowObj.SetActive(true);
 
-        // Act
+
         string result = row.word;
 
-        // Assert
+
         Assert.AreEqual("CAT", result);
     }
 }
